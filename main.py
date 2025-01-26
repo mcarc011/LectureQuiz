@@ -72,7 +72,7 @@ def main():
     with tab2:
         st.header("Average Scores")
         avg_score = 0 
-        with f as open('score.txt','w'):
+        with open('score.txt','w') as f:
             ftext = f.readlines()
             avg_score = np.average([float(fi.split(':')[1]) for fi in ftext])
 
