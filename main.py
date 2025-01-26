@@ -41,33 +41,32 @@ def main():
             st.subheader(f"Question {idx + 1}")
             user_answer = st.radio(q["question"], q["options"], key=idx)
 
-            # Check answer
-            if user_answer == q["answer"]:
-                # st.success("Correct!")
-                score += 1
-            else:
-                pass
-                # st.error(f"Wrong! The correct answer is {q['answer']}.")
 
-        # Final score
-        st.write("---")
+        if st.button("Submit Quiz"):
+            answers_submitted = True
 
-        with open('scores.csv','r+') as f:
-            ftext = f.readlines()
-            if quiz_id in ','.join(ftext):
-                ftext = [fi for fi in ftext if quiz_id not in fi]
-            ftext += [quiz_id + ','+ str(score/len(questions))]
-            f.write('\n'.join(ftext))
-            f.close()
+        if answers_submitted:
+            for idx, q in enumerate(questions):
+                if user_answer[idx] == q["answer"]:
+                    st.success(f"Question {idx + 1}: Correct!")
+                    score += 1
+                else:
+                    st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
 
-        # Feedback based on score
-        if score == len(questions):
-            st.balloons()
-            st.success("Excellent! You're a quiz master!")
-        elif score >= len(questions) // 2:
-            st.info("Good job! Keep practicing to improve.")
-        else:
-            st.warning("Don't worry, try again and you'll do better next time!")
+            # Final score
+            st.write("---")
+            st.header(f"Your final score: {score}/{len(questions)}")
+
+
+            with open('scores.csv','r+') as f:
+                ftext = f.readlines()
+                if quiz_id in ','.join(ftext):
+                    ftext = [fi for fi in ftext if quiz_id not in fi]
+                ftext += [quiz_id + ','+ str(score/len(questions))]
+                f.write('\n'.join(ftext))
+                f.close()
+
+
 
     with tab2:
         st.header("Average Scores")
