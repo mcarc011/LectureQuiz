@@ -37,6 +37,7 @@ def main():
 
     with tab1:
         # Display questions
+        answers_submitted = False
         for idx, q in enumerate(questions):
             st.subheader(f"Question {idx + 1}")
             user_answer = st.radio(q["question"], q["options"], key=idx)
