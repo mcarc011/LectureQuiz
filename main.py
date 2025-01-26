@@ -84,15 +84,14 @@ def main():
         try:
             csv_data = pd.read_csv('scores.csv')
             unique_ids = csv_data.iloc[:, 0].unique()
-            averages = []
+            highscores = []
             for uid in unique_ids:
-                averages += [csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1].mean()]
-            avg_score = np.mean(averages)
+                highscores += [np.argmax(csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1])]
+            avg_score = np.mean(highscores)
         except:
             avg_score = 0
-            averages = [1]
 
-        st.write(averages)
+        st.write(round(100*avg_score,2))
 
 if __name__ == "__main__":
     main()
