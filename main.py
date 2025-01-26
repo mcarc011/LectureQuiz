@@ -86,7 +86,7 @@ def main():
             unique_ids = csv_data.iloc[:, 0].unique()
             highscores = []
             for uid in unique_ids:
-                highscores += [max(csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1])]
+                highscores += [csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1].max()]
             avg_score = np.mean(highscores)
         except:
             avg_score = 0
