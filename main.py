@@ -81,7 +81,7 @@ def main():
                 avg_score = 0 
             f.close()
 
-        st.write(avg_score)
+        st.write(round(100*avg_score,2))
 
 if __name__ == "__main__":
     main()
