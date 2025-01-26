@@ -1,9 +1,11 @@
 import streamlit as st
+import uuid
 
 def main():
     st.title("Quiz App")
     st.write("Test your knowledge with this fun quiz!")
 
+    quiz_id = st.session_state.get("quiz_id", str(uuid.uuid4()))
     # Questions and answers
     questions = [
         {
@@ -40,11 +42,18 @@ def main():
             # st.success("Correct!")
             score += 1
         else:
+            pass
             # st.error(f"Wrong! The correct answer is {q['answer']}.")
 
     # Final score
     st.write("---")
-    st.header(f"Your final score: {score}/{len(questions)}")
+
+    with open('score.txt','w') as f:
+        ftext = f.read()
+        if quizid in f.read():
+
+        f.write({score}/{len(questions)})
+        f.close()
 
     # Feedback based on score
     if score == len(questions):
