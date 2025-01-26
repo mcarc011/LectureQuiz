@@ -93,5 +93,9 @@ def main():
 
         st.write(round(100*avg_score,2))
 
+        if st.button("Reset"):
+            empty = pd.DataFrame()
+            empty.to_csv('scores.csv',index=False)
+
 if __name__ == "__main__":
     main()
