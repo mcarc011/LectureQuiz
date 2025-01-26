@@ -1,6 +1,7 @@
 import streamlit as st
 import uuid
 import numpy as np
+import pandas as pd
 
 # Generate a unique ID for the session if it doesn't already exist
 if 'unique_id' not in st.session_state:
@@ -79,14 +80,8 @@ def main():
 
     with tab2:
         st.header("Average Scores")
-        with open('scores.csv','r') as f:
-            ftext = f.readlines()
-            #try:
-            avg_score = np.average([float(fi.split(',')[1]) for fi in ftext])
-            #xcept:
-                #avg_score = 0 
-            f.close()
-
+        csv_data = pd.read_csv('scores.csv')
+        avg_score = csv_data.iloc[:, 1].mean()
         st.write(round(100*avg_score,2))
 
 if __name__ == "__main__":
