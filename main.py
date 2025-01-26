@@ -73,14 +73,14 @@ def main():
 
     with tab2:
         st.header("Average Scores")
-        with open('scores.csv','r') as f:
-            ftext = f.readlines()
-            try:
-                print(ftext)
-                avg_score = np.average([float(fi.split(',')[1]) for fi in ftext])
-            except:
-                avg_score = 0 
-            f.close()
+        if st.button("Refresh Scores"):
+            with open('scores.csv','r') as f:
+                ftext = f.readlines()
+                try:
+                    avg_score = np.average([float(fi.split(',')[1]) for fi in ftext])
+                except:
+                    avg_score = 0 
+                f.close()
 
         st.write(round(100*avg_score,2))
 
