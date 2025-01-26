@@ -40,7 +40,7 @@ def main():
         answers_submitted = False
         for idx, q in enumerate(questions):
             st.subheader(f"Question {idx + 1}")
-            user_answer = st.radio(q["question"], q["options"], key=idx)
+            user_answer[idx] = st.radio(q["question"], q["options"], key=idx)
 
 
         if st.button("Submit Quiz"):
@@ -53,7 +53,7 @@ def main():
                     score += 1
                 else:
                     st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
-                    
+
             with open('scores.csv','r+') as f:
                 ftext = f.readlines()
                 if quiz_id in ','.join(ftext):
