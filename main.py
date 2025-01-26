@@ -76,6 +76,7 @@ def main():
         with open('scores.csv','r') as f:
             ftext = f.readlines()
             try:
+                print(ftext)
                 avg_score = np.average([float(fi.split(',')[1]) for fi in ftext])
             except:
                 avg_score = 0 
