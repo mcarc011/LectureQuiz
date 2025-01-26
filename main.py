@@ -37,10 +37,10 @@ def main():
 
         # Check answer
         if user_answer == q["answer"]:
-            st.success("Correct!")
+            # st.success("Correct!")
             score += 1
         else:
-            st.error(f"Wrong! The correct answer is {q['answer']}.")
+            # st.error(f"Wrong! The correct answer is {q['answer']}.")
 
     # Final score
     st.write("---")
