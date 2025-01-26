@@ -22,7 +22,7 @@ def main():
     # Questions and answers
     questions = [
         {
-            "question": "What is cos("+st.latex('\pi')+"?",
+            "question": "What is cos($\\pi$)?",
             "options": ["Cos()", "0", "1", "Lisbon"],
             "answer": "Paris",
         },
