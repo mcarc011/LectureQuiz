@@ -62,7 +62,7 @@ def main():
             with open('scores.csv','r+') as f:
                 ftext = f.readlines()
                 if st.session_state.unique_id in ','.join(ftext):
-                    ftext = [fi for fi in ftext if quiz_id not in fi]
+                    ftext = [fi for fi in ftext if st.session_state.unique_id not in fi]
                 ftext += [st.session_state.unique_id+ ','+ str(score/len(questions))]
                 st.write(ftext)
                 f.write('\n'.join(ftext))
