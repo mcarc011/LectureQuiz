@@ -22,8 +22,8 @@ def main():
     # Questions and answers
     questions = [
         {
-            "question": "What is the capital of France?",
-            "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+            "question": "What is cos("+st.latex('\pi')+"?",
+            "options": ["Cos()", "0", "1", "Lisbon"],
             "answer": "Paris",
         },
         {
@@ -55,7 +55,7 @@ def main():
             st.subheader(f"Question {idx + 1}")
             user_answer[idx] = st.radio(q["question"], q["options"], key=idx)
 
-
+        
         if st.button("Submit Quiz"):
             answers_submitted = True
 
