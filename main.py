@@ -83,7 +83,10 @@ def main():
         st.header("Average Scores")
         try:
             csv_data = pd.read_csv('scores.csv')
-            avg_score = csv_data.iloc[:, 1].mean()
+            unique_ids = csv_data.iloc[:, 0].unique()
+            averages = {}
+            for uid in unique_ids:
+                averages[uid] = csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1].mean()
         except:
             avg_score = 0
         st.write(round(100*avg_score,2))
