@@ -94,7 +94,7 @@ def main():
         st.write(round(100*avg_score,2))
 
         if st.button("Reset"):
-            empty = pd.DataFrame([{"id": '0', "score": 0}])
+            empty = pd.DataFrame(columns=["id", "score"])
             empty.to_csv('scores.csv',index=False)
 
 if __name__ == "__main__":
