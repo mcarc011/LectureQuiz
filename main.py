@@ -69,7 +69,7 @@ def main():
 
             scores_data = load_scores()
             user_score = pd.DataFrame([{"id": st.session_state.unique_id, "score": score/len(questions)}])
-            scores_data = pd.concat([pd.read_csv('scores.csv'), user_score], ignore_index=True)
+            scores_data = pd.concat([scores_data, user_score], ignore_index=True)
             scores_data.to_csv('scores.csv', index=False)
             
             answers_submitted = False
