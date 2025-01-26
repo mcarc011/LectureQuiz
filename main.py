@@ -60,17 +60,11 @@ def main():
                 else:
                     st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
 
-            with open('scores.csv','r+') as f:
-                ftext = f.readlines()
-                quiz_id = st.session_state.unique_id
-                if quiz_id in ','.join(ftext):
-                    ftext = [fi for fi in ftext if quiz_id not in fi]
-                ftext += [quiz_id+ ','+ str(score/len(questions))]
-                st.write('\n'.join(ftext))
-                f.write('\n'.join(ftext))
-                f.close()
-                answers_submitted = False
-
+            user_score = pd.DataFrame([{"id": st.session_state.unique_id, "score": score/len(questions)}])
+            scores_data = pd.concat([pd.read_csv('scores.csv'), user_score], ignore_index=True)
+            scores_data.to_csv('scores.csv', index=False)
+            
+            answers_submitted = False
 
             # Final score
         if score > 0:
