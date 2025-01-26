@@ -90,8 +90,9 @@ def main():
             avg_score = np.mean(averages)
         except:
             avg_score = 0
+            averages = [1]
 
-        st.write(round(100*avg_score,2))
+        st.write(averages)
 
 if __name__ == "__main__":
     main()
