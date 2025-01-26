@@ -52,7 +52,7 @@ def main():
         # Final score
         st.write("---")
 
-        with open('score.txt','w') as f:
+        with open('scores.txt','w') as f:
             ftext = f.readlines()
             if quiz_id in ','.join(ftext):
                 ftext = [fi for fi in ftext if quiz_id not in fi]
@@ -72,7 +72,7 @@ def main():
     with tab2:
         st.header("Average Scores")
         avg_score = 0 
-        with open('score.txt','w') as f:
+        with open('scores.txt','w') as f:
             ftext = f.readlines()
             avg_score = np.average([float(fi.split(':')[1]) for fi in ftext])
 
