@@ -53,12 +53,7 @@ def main():
                     score += 1
                 else:
                     st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
-
-            # Final score
-            st.write("---")
-            st.header(f"Your final score: {score}/{len(questions)}")
-
-
+                    
             with open('scores.csv','r+') as f:
                 ftext = f.readlines()
                 if quiz_id in ','.join(ftext):
@@ -66,7 +61,13 @@ def main():
                 ftext += [quiz_id + ','+ str(score/len(questions))]
                 f.write('\n'.join(ftext))
                 f.close()
+                answers_submitted = False
 
+
+            # Final score
+        if score > 0:
+            st.write("---")
+            st.header(f"Your final score: {score}/{len(questions)}")
 
 
     with tab2:
