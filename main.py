@@ -74,7 +74,6 @@ def main():
             
             answers_submitted = False
 
-            # Final score
         if score > 0:
             st.write("---")
             st.header(f"Your final score: {score}/{len(questions)}")
