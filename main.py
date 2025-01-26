@@ -1,5 +1,6 @@
 import streamlit as st
 import uuid
+import numpy as np
 
 def main():
     st.title("Quiz App")
@@ -32,37 +33,50 @@ def main():
 
     score = 0
 
-    # Display questions
-    for idx, q in enumerate(questions):
-        st.subheader(f"Question {idx + 1}")
-        user_answer = st.radio(q["question"], q["options"], key=idx)
+    tab1, tab2 = st.tabs(["Quiz", "Scores"])
 
-        # Check answer
-        if user_answer == q["answer"]:
-            # st.success("Correct!")
-            score += 1
+    with tab1:
+        # Display questions
+        for idx, q in enumerate(questions):
+            st.subheader(f"Question {idx + 1}")
+            user_answer = st.radio(q["question"], q["options"], key=idx)
+
+            # Check answer
+            if user_answer == q["answer"]:
+                # st.success("Correct!")
+                score += 1
+            else:
+                pass
+                # st.error(f"Wrong! The correct answer is {q['answer']}.")
+
+        # Final score
+        st.write("---")
+
+        with open('score.txt','w') as f:
+            ftext = f.readlines()
+            if quiz_id in ','.join(ftext):
+                ftext = [fi for fi in ftext if quiz_id not in fi]
+            ftext += [quiz_id + ':'+ {score}/{len(questions)}]
+            f.write('\n'.join(ftext))
+            f.close()
+
+        # Feedback based on score
+        if score == len(questions):
+            st.balloons()
+            st.success("Excellent! You're a quiz master!")
+        elif score >= len(questions) // 2:
+            st.info("Good job! Keep practicing to improve.")
         else:
-            pass
-            # st.error(f"Wrong! The correct answer is {q['answer']}.")
+            st.warning("Don't worry, try again and you'll do better next time!")
 
-    # Final score
-    st.write("---")
+    with tab2:
+        st.header("Average Scores")
+        avg_score = 0 
+        with open('score.txt','w') as f:
+            ftext = f.readlines()
+            avg_score = np.average([float(fi.split(':')[1]) for fi in ftext])
 
-    with open('score.txt','w') as f:
-        ftext = f.read()
-        if quizid in f.read():
-
-        f.write({score}/{len(questions)})
-        f.close()
-
-    # Feedback based on score
-    if score == len(questions):
-        st.balloons()
-        st.success("Excellent! You're a quiz master!")
-    elif score >= len(questions) // 2:
-        st.info("Good job! Keep practicing to improve.")
-    else:
-        st.warning("Don't worry, try again and you'll do better next time!")
+        st.write(avg_score)
 
 if __name__ == "__main__":
     main()
