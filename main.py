@@ -81,8 +81,11 @@ def main():
 
     with tab2:
         st.header("Average Scores")
-        csv_data = pd.read_csv('scores.csv')
-        avg_score = csv_data.iloc[:, 1].mean()
+        try:
+            csv_data = pd.read_csv('scores.csv')
+            avg_score = csv_data.iloc[:, 1].mean()
+        except:
+            avg_score = 0
         st.write(round(100*avg_score,2))
 
 if __name__ == "__main__":
