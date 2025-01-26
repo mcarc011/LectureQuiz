@@ -2,11 +2,18 @@ import streamlit as st
 import uuid
 import numpy as np
 import pandas as pd
+import os
 
 # Generate a unique ID for the session if it doesn't already exist
 if 'unique_id' not in st.session_state:
     # Generate a unique ID based on UUID
     st.session_state.unique_id = str(uuid.uuid4())
+
+def load_scores():
+    if os.path.exists('scores.csv'):
+        return pd.read_csv('scores.csv')
+    else:
+        return pd.DataFrame(columns=["id", "score"])
 
 def main():
     st.title("Quiz App")
@@ -60,6 +67,7 @@ def main():
                 else:
                     st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
 
+            scores_data = load_scores()
             user_score = pd.DataFrame([{"id": st.session_state.unique_id, "score": score/len(questions)}])
             scores_data = pd.concat([pd.read_csv('scores.csv'), user_score], ignore_index=True)
             scores_data.to_csv('scores.csv', index=False)
