@@ -2,7 +2,7 @@ import streamlit as st
 import uuid
 import numpy as np
 
-quiz_id = st.session_state.get("quiz_id", str(uuid.uuid4()))
+quiz_id = str(uuid.uuid4())
 
 def main():
     st.title("Quiz App")
