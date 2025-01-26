@@ -71,10 +71,10 @@ def main():
 
     with tab2:
         st.header("Average Scores")
-        avg_score = 0 
-        with open('scores.csv','r+') as f:
+        with open('scores.csv','r') as f:
             ftext = f.readlines()
             avg_score = np.average([float(fi.split(',')[1]) for fi in ftext])
+            f.close()
 
         st.write(avg_score)
 
