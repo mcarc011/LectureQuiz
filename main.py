@@ -44,7 +44,7 @@ def main():
             "answer": "0",
         },
                 {
-            "question": "What is sin($\\theta$)$^{2}$ + cos($\\theta$)$^{2}$?",
+            "question": "What is sin$^{2}$$\\theta$ + cos$^{2}$$\\theta$?",
             "options": [
                 "-1",
                 "0",
@@ -53,7 +53,7 @@ def main():
             "answer": "1",
         },
                 {
-            "question": "What angle is sin($\\theta$) = -cos($\\theta)",
+            "question": "What angle is sin$\\theta$ = -cos$\\theta",
             "options": [
                 "$\\frac{\\pi}{4}$",
                 "$\\frac{\\pi}{2}$",
