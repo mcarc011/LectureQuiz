@@ -23,12 +23,12 @@ def main():
     questions = [
         {
             "question": "What is cos($\\pi$)?",
-            "options": ["Cos()", "0", "1", "Lisbon"],
-            "answer": "Paris",
+            "options": ["-1", "0", "1"],
+            "answer": "-1",
         },
         {
-            "question": "Which planet is known as the Red Planet?",
-            "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+            "question": "What angle is associated with $\\frac{\\pi}/{4}$?",
+            "options": ["30\u00b0", "45\u00b0", "90\u00b0", "180\u00b0"],
             "answer": "Mars",
         },
         {
