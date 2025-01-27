@@ -19,7 +19,7 @@ def load_scores():
 
 def main():
     st.title("Trigonometry")
-    st.write("Please refrain from using google or AI. Instead use this!" )
+    st.write("Please refrain from using google, a calculator, or AI. Instead use this!" )
     st.write("Unit Circle Simulation:[simul]%")
 
     # Questions and answers
@@ -30,19 +30,36 @@ def main():
             "answer": "-1",
         },
         {
-            "question": "What angle is associated with $\\frac{\\pi}/{4}$?",
+            "question": "What angle is associated with $\\frac{\\pi}{2}$?",
             "options": ["30\u00b0", "45\u00b0", "90\u00b0", "180\u00b0"],
             "answer": "45\u00b0",
         },
         {
-            "question": "Who wrote 'To Kill a Mockingbird'?",
+            "question": "What is sin($6\\pi$)?",
             "options": [
-                "Harper Lee",
-                "Mark Twain",
-                "Ernest Hemingway",
-                "F. Scott Fitzgerald",
+                "-1",
+                "0",
+                "1",
             ],
-            "answer": "Harper Lee",
+            "answer": "0",
+        },
+                {
+            "question": "What is sin($\\theta$)$^{2}$ + cos($\\theta$)$^{2}$?",
+            "options": [
+                "-1",
+                "0",
+                "1",
+            ],
+            "answer": "1",
+        },
+                {
+            "question": "What angle is sin($\\theta$) = -cos($\\theta)",
+            "options": [
+                "$\\frac{\\pi}{4}$",
+                "$\\frac{\\pi}{2}$",
+                "$\\frac{3\\pi}{4}$",
+            ],
+            "answer": "$\\frac{3\\pi}{4}$",
         },
     ]
 
