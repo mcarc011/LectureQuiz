@@ -53,7 +53,7 @@ def main():
             "answer": "1",
         },
                 {
-            "question": "What angle is sin$\\theta$ = -cos$\\theta",
+            "question": "What angle is sin$\\theta$ = -cos$\\theta$",
             "options": [
                 "$\\frac{\\pi}{4}$",
                 "$\\frac{\\pi}{2}$",
