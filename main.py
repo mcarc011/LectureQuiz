@@ -9,6 +9,8 @@ if 'unique_id' not in st.session_state:
     # Generate a unique ID based on UUID
     st.session_state.unique_id = str(uuid.uuid4())
 
+simul = "https://phet.colorado.edu/sims/html/trig-tour/latest/trig-tour_all.html"
+
 def load_scores():
     if os.path.exists('scores.csv'):
         return pd.read_csv('scores.csv')
@@ -16,8 +18,9 @@ def load_scores():
         return pd.DataFrame(columns=["id", "score"])
 
 def main():
-    st.title("Quiz App")
-    st.write("Test your knowledge with this fun quiz!")
+    st.title("Trigonometry")
+    st.write("Please refrain from using google or AI. Instead use this!" )
+    st.write("Unit Circle Simulation:[simul]%")
 
     # Questions and answers
     questions = [
@@ -29,7 +32,7 @@ def main():
         {
             "question": "What angle is associated with $\\frac{\\pi}/{4}$?",
             "options": ["30\u00b0", "45\u00b0", "90\u00b0", "180\u00b0"],
-            "answer": "Mars",
+            "answer": "45\u00b0",
         },
         {
             "question": "Who wrote 'To Kill a Mockingbird'?",
