@@ -44,7 +44,7 @@ def main():
             "answer": "0",
         },
                 {
-            "question": "What is sin$^{2}$$\\theta$ + cos$^{2}$$\\theta$?",
+            "question": "What is sin$^{2}\\theta$ + cos$^{2}\\theta$?",
             "options": [
                 "-1",
                 "0",
