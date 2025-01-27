@@ -9,7 +9,7 @@ if 'unique_id' not in st.session_state:
     # Generate a unique ID based on UUID
     st.session_state.unique_id = str(uuid.uuid4())
 
-simul = "https://phet.colorado.edu/sims/html/trig-tour/latest/trig-tour_all.html"
+Simulation = "https://phet.colorado.edu/sims/html/trig-tour/latest/trig-tour_all.html"
 
 def load_scores():
     if os.path.exists('scores.csv'):
@@ -20,7 +20,7 @@ def load_scores():
 def main():
     st.title("Trigonometry")
     st.write("Please refrain from using google, a calculator, or AI. Instead use this!" )
-    st.write("Unit Circle Simulation:[simul](%s)")
+    st.write("Unit Circle Simulation : [Simulation](%s)")
 
     # Questions and answers
     questions = [
