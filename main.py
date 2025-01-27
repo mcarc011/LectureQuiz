@@ -20,7 +20,7 @@ def load_scores():
 def main():
     st.title("Trigonometry")
     st.write("Please refrain from using google, a calculator, or AI. Instead use this!" )
-    st.write("Unit Circle Simulation:[simul]%")
+    st.write("Unit Circle Simulation:[simul](%s)")
 
     # Questions and answers
     questions = [
