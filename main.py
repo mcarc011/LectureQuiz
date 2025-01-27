@@ -86,7 +86,7 @@ def main():
                     st.success(f"Question {idx + 1}: Correct!")
                     score += 1
                 else:
-                    st.error(f"Question {idx + 1}: Wrong! The correct answer is {q['answer']}.")
+                    st.error(f"Question {idx + 1}: Wrong!.")
 
             scores_data = load_scores()
             user_score = pd.DataFrame([{"id": st.session_state.unique_id, "score": score/len(questions)}])
