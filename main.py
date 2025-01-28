@@ -30,7 +30,7 @@ def main():
             "answer": "-1",
         },
         {
-            "question": "What angle is associated with $\\frac{\\pi}{2}$?",
+            "question": "What angle is associated with $\\frac{\\pi}{4}$?",
             "options": ["30\u00b0", "45\u00b0", "90\u00b0", "180\u00b0"],
             "answer": "45\u00b0",
         },
@@ -106,6 +106,7 @@ def main():
             csv_data = pd.read_csv('scores.csv')
             unique_ids = csv_data.iloc[:, 0].unique()
             highscores = []
+            st.write(len(unique_ids))
             for uid in unique_ids:
                 highscores += [csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1].max()]
             avg_score = np.mean(highscores)
