@@ -106,7 +106,7 @@ def main():
             csv_data = pd.read_csv('scores.csv')
             unique_ids = csv_data.iloc[:, 0].unique()
             highscores = []
-            st.write(len(csv_data.iloc[:, 0]))
+            st.write(len(unique_ids))
             for uid in unique_ids:
                 highscores += [csv_data[csv_data.iloc[:, 0] == uid].iloc[:, 1].max()]
             avg_score = np.mean(highscores)
