@@ -25,42 +25,39 @@ def main():
     # Questions and answers
     questions = [
         {
-            "question": "What is cos($\\pi$)?",
-            "options": ["-1", "0", "1"],
-            "answer": "-1",
+            "question": "What angle in radians is associated with the northwest direction?",
+            "options": ["$\\frac{\\pi}{4}$", "$\\frac{3\\pi}{4}$", "$\\frac{5\\pi}{4}$", "$\\frac{7\\pi}{4}$"],
+            "answer":  "$\\frac{\\pi}{4}$",
         },
         {
-            "question": "What angle is associated with $\\frac{\\pi}{4}$?",
-            "options": ["30\u00b0", "45\u00b0", "90\u00b0", "180\u00b0"],
-            "answer": "45\u00b0",
+            "question": "At what angle do I walk if I walk 0.5mi east and 0.866mi north?",
+            "options": ["30\u00b0", "45\u00b0", "60\u00b0", "90\u00b0"],
+            "answer": "60\u00b0",
         },
         {
-            "question": "What is sin($6\\pi$)?",
+            "question": "Which of these will tell me how far east I went if I walked 30\u00b0 southeast for 20 miles?",
             "options": [
-                "-1",
-                "0",
-                "1",
+                "20 cos(30\u00b0)",
+                "30\u00b0 cos(20)",
+                "20 sin(30\u00b0)",
+                "30\u00b0 sin(20)"
             ],
-            "answer": "0",
+            "answer": "20 cos(30\u00b0)",
+        },
+        {
+            "question": "Which of these will tell me how far south I went if I walked 30\u00b0 southeast for 20 miles?",
+            "options": [
+                "20 cos(30\u00b0)",
+                "30\u00b0 cos(20)",
+                "20 sin(30\u00b0)",
+                "30\u00b0 sin(20)"
+            ],
+            "answer": "20 sin(30\u00b0)",
         },
                 {
-            "question": "What is sin$^{2}\\theta$ + cos$^{2}\\theta$?",
-            "options": [
-                "-1",
-                "0",
-                "1",
-            ],
-            "answer": "1",
-        },
-                {
-            "question": "At what angle is sin $\\theta$ = -cos $\\theta$",
-            "options": [
-                "$\\frac{\\pi}{4}$",
-                "$\\frac{\\pi}{2}$",
-                "$\\frac{3\\pi}{4}$",
-                "$\\pi$",
-            ],
-            "answer": "$\\frac{3\\pi}{4}$",
+            "question": "At what angle is sin $\\theta$ and cos $\\theta$ negative?",
+            "options": ["$\\frac{\\pi}{4}$", "$\\frac{3\\pi}{4}$", "$\\frac{5\\pi}{4}$", "$\\frac{7\\pi}{4}$"],
+            "answer":  "$\\frac{5\\pi}{4}$",
         },
     ]
 
