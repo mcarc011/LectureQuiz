@@ -27,7 +27,7 @@ def main():
         {
             "question": "What angle in radians is associated with the northwest direction?",
             "options": ["$\\frac{\\pi}{4}$", "$\\frac{3\\pi}{4}$", "$\\frac{5\\pi}{4}$", "$\\frac{7\\pi}{4}$"],
-            "answer":  "$\\frac{\\pi}{4}$",
+            "answer":  "$\\frac{3\\pi}{4}$",
         },
         {
             "question": "At what angle do I walk if I walk 0.5mi east and 0.866mi north?",
