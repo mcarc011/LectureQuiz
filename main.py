@@ -18,7 +18,7 @@ def check_answer(user_answer, correct_answer):
 def magnitude_and_angle(vector):
     magnitude = np.linalg.norm(vector)
     angle = np.degrees(np.arctan2(vector[1], vector[0]))
-    return magnitude, angle
+    return round(float(magnitude),2), round(float(angle,2))
 
 # Streamlit app
 st.title("Vector Addition")
