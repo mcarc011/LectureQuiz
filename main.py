@@ -17,7 +17,10 @@ def check_answer(user_answer, correct_answer):
 
 def magnitude_and_angle(vector):
     magnitude = np.linalg.norm(vector)
-    angle =  np.degrees(np.arctan2(vector[1], vector[0])) % 360
+    angle =  np.degrees(np.arctan2(vector[1], vector[0])) 
+    # Ensure the angle is in the range 0 to 360 degrees
+    if angle < 0:
+        angle += 360
     mag,angle = round(float(magnitude),2), round(float(angle),2)
     return 'You walked '+str(mag)+' miles at an angle of ' + str(angle) + ' degrees'
 
