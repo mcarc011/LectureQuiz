@@ -35,7 +35,7 @@ else:
     v1, v2, v3 = st.session_state.v1, st.session_state.v2, st.session_state.v3
 
 # Display vectors
-st.write(f"**1st segment of walk:** {magnitude_and_angle(v1)}")
+st.write(f"**1st segment of walk:** {magnitude_and_angle(v1)}{v1}")
 st.write(f"**2nd segment of walk:** {magnitude_and_angle(v2)}")
 st.write(f"**3rd segment of walk:** {magnitude_and_angle(v3)}")
 
