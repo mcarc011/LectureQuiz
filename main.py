@@ -33,6 +33,9 @@ st.markdown("[simulation](https://phet.colorado.edu/sims/html/vector-addition/la
 # Generate vectors
 if 'v1' not in st.session_state or 'v2' not in st.session_state or 'v3' not in st.session_state:
     v1, v2, v3 = generate_vectors()
+    v1 = np.array([1,0])
+    v2 = np.array([1,1])
+    v3 = np.array([-1,0])
     st.session_state.v1, st.session_state.v2, st.session_state.v3 = v1, v2, v3
 else:
     v1, v2, v3 = st.session_state.v1, st.session_state.v2, st.session_state.v3
