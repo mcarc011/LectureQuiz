@@ -44,7 +44,7 @@ x_component = st.number_input("Enter your x-coordinate (or how much you went Eas
 y_component = st.number_input("Enter your y-coordinate (or how much you went North/South)", step=1)
 
 # Submit button
-if st.button("Submit Answer"):
+if st.button("Submit Answer (Round to nearest integer)"):
     user_answer = np.array([x_component, y_component])
     correct_answer = v1 + v2 + v3
     
