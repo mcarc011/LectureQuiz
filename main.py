@@ -40,11 +40,12 @@ st.write(f"**2nd segment of walk:** {magnitude_and_angle(v2)}")
 st.write(f"**3rd segment of walk:** {magnitude_and_angle(v3)}")
 
 # Input for user answer
+st.write(f"**Submit your answer by rounding to nearest integer**")
 x_component = st.number_input("Enter your x-coordinate (or how much you went East/West)", step=1)
 y_component = st.number_input("Enter your y-coordinate (or how much you went North/South)", step=1)
 
 # Submit button
-if st.button("Submit Answer (Round to nearest integer)"):
+if st.button("Submit Answer"):
     user_answer = np.array([x_component, y_component])
     correct_answer = v1 + v2 + v3
     
